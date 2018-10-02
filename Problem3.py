@@ -1,9 +1,10 @@
 import sys
 
-def lpf(num):
-	for x in range(int((num+1)/2),1,-1):
+def lpf(num,start):
+	for x in range(start,num,1):
 		if num%x==0:
-			return lpf(x)
+			print(x)
+			return lpf(int(num/x),x)
 	return num
 
-print(lpf(int(sys.argv[1])))
+print(lpf(int(sys.argv[1]),2))
